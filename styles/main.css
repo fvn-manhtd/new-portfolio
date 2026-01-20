@@ -1,0 +1,844 @@
+/* ============================================
+   DESIGN SYSTEM - Tokyo Tech Fusion
+   ============================================ */
+
+:root {
+    /* Colors */
+    --color-bg-primary: #0a0f1a;
+    --color-bg-secondary: #0f1629;
+    --color-bg-card: rgba(15, 22, 41, 0.7);
+    --color-bg-glass: rgba(255, 255, 255, 0.03);
+
+    --color-accent-cyan: #00f5ff;
+    --color-accent-coral: #ff6b6b;
+    --color-accent-purple: #a855f7;
+    --color-accent-gold: #fbbf24;
+
+    --color-text-primary: #ffffff;
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
+    --color-text-muted: rgba(255, 255, 255, 0.4);
+
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-border-glow: rgba(0, 245, 255, 0.3);
+
+    /* Typography */
+    --font-display: 'Outfit', 'Zen Kaku Gothic New', sans-serif;
+    --font-body: 'Noto Sans JP', 'Outfit', sans-serif;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* Effects */
+    --shadow-glow-cyan: 0 0 30px rgba(0, 245, 255, 0.3);
+    --shadow-glow-coral: 0 0 30px rgba(255, 107, 107, 0.3);
+    --blur-glass: 20px;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background: var(--color-bg-primary);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(0, 245, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: var(--space-4) 0;
+    background: rgba(10, 15, 26, 0.8);
+    backdrop-filter: blur(var(--blur-glass));
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-coral));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--space-8);
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent-cyan);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+    color: var(--color-text-primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 var(--space-6);
+    padding-top: 80px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-greeting {
+    font-size: 1.125rem;
+    color: var(--color-accent-cyan);
+    margin-bottom: var(--space-2);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.hero-name {
+    margin-bottom: var(--space-4);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.name-jp {
+    display: block;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.name-en {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-2);
+}
+
+.hero-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+.title-main {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent-cyan);
+}
+
+.title-divider {
+    color: var(--color-text-muted);
+}
+
+.title-sub {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent-coral);
+}
+
+.hero-tagline {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+}
+
+.hero-tagline .highlight {
+    color: var(--color-accent-gold);
+    font-weight: 600;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-4);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent-cyan), #00c4cc);
+    color: var(--color-bg-primary);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(0, 245, 255, 0.5);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-ghost:hover {
+    border-color: var(--color-accent-cyan);
+    color: var(--color-accent-cyan);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--color-accent-cyan), transparent);
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.section-title .title-jp {
+    display: block;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.section-title .title-en {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/* Skills Section */
+.skills {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-secondary);
+    position: relative;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent-cyan), transparent);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+}
+
+.skill-card {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-coral));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-border-glow);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-icon {
+    font-size: 2.25rem;
+    margin-bottom: var(--space-4);
+}
+
+.skill-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.skill-years {
+    font-size: 0.875rem;
+    color: var(--color-accent-cyan);
+    margin-bottom: var(--space-4);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.tag {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    font-size: 0.75rem;
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.skill-card:hover .tag {
+    background: rgba(0, 245, 255, 0.2);
+    border-color: rgba(0, 245, 255, 0.4);
+    color: var(--color-text-primary);
+}
+
+/* Strengths Section */
+.strengths {
+    padding: var(--space-24) 0;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-8);
+}
+
+.strength-card {
+    padding: var(--space-8);
+    border-left: 3px solid var(--color-accent-coral);
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, transparent 100%);
+    transition: all var(--transition-base);
+}
+
+.strength-card:hover {
+    transform: translateX(8px);
+    border-left-color: var(--color-accent-cyan);
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.05) 0%, transparent 100%);
+}
+
+.strength-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-4);
+}
+
+.strength-card h3 {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+}
+
+.strength-card p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+/* Experience Section */
+.experience {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-secondary);
+    position: relative;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent-coral), transparent);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-accent-cyan), var(--color-accent-coral));
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: var(--space-12);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: var(--color-bg-secondary);
+    border: 3px solid var(--color-accent-cyan);
+    border-radius: 50%;
+    transition: all var(--transition-base);
+}
+
+.timeline-item:hover .timeline-marker {
+    background: var(--color-accent-cyan);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.timeline-content {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--color-border-glow);
+    transform: translateX(8px);
+}
+
+.project-header {
+    margin-bottom: var(--space-3);
+}
+
+.project-date {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--color-accent-cyan);
+    background: rgba(0, 245, 255, 0.1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-2);
+}
+
+.project-name {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.project-role {
+    font-size: 0.875rem;
+    color: var(--color-accent-coral);
+    margin-bottom: var(--space-3);
+}
+
+.project-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.75rem;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent-purple);
+}
+
+.project-team {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+/* Contact Section */
+.contact {
+    padding: var(--space-24) 0;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-intro {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-10);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(var(--blur-glass));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.contact-link:hover {
+    border-color: var(--color-accent-cyan);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.contact-value {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-accent-cyan);
+    margin-left: auto;
+}
+
+/* Footer */
+.footer {
+    padding: var(--space-8) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleY(1.2);
+        opacity: 1;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .name-jp {
+        font-size: 2.25rem;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-marker {
+        left: 3px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .contact-link {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact-value {
+        margin-left: 0;
+        width: 100%;
+        margin-top: var(--space-2);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .skills-grid,
+    .strengths-grid {
+        grid-template-columns: 1fr;
+    }
+}

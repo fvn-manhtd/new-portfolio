@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="トラン ドク マイン - 8年間のフルスタック開発経験を持つエンジニア。React Native, Laravel, AWS対応。">
+    <title>Tran Duc Manh | Fullstack Engineer & Bridge SE</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">TDM</a>
+            <ul class="nav-menu">
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Animation -->
+    <section id="hero" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">こんにちは、私は</p>
+                <h1 class="hero-name">
+                    <span class="name-jp">トラン ドク マイン</span>
+                    <span class="name-en">Tran Duc Manh</span>
+                </h1>
+                <div class="hero-title">
+                    <span class="title-main">Fullstack Engineer</span>
+                    <span class="title-divider">&</span>
+                    <span class="title-sub">Bridge SE</span>
+                </div>
+                <p class="hero-tagline">
+                    <span class="highlight">8年間</span>のWeb・モバイル開発経験
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">お問い合わせ</a>
+                    <a href="#experience" class="btn btn-ghost">実績を見る</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-jp">テクニカルスキル</span>
+                <span class="title-en">Technical Skills</span>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-category="frontend">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Frontend</h3>
+                    <p class="skill-years">8年+</p>
+                    <div class="skill-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Vue.js</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="mobile">
+                    <div class="skill-icon">📱</div>
+                    <h3>Mobile</h3>
+                    <p class="skill-years">8年+</p>
+                    <div class="skill-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Kotlin</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="backend">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Backend</h3>
+                    <p class="skill-years">8年+</p>
+                    <div class="skill-tags">
+                        <span class="tag">PHP/Laravel</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Java</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="infra">
+                    <div class="skill-icon">☁️</div>
+                    <h3>Infrastructure</h3>
+                    <p class="skill-years">4年+</p>
+                    <div class="skill-tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">GCP</span>
+                        <span class="tag">Terraform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section id="strengths" class="strengths">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-jp">強みと展望</span>
+                <span class="title-en">Strengths & Vision</span>
+            </h2>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <div class="strength-number">01</div>
+                    <h3>継続的な学習意欲</h3>
+                    <p>「IT技術で生活を豊かにする」という目標に向け、業務外でも最新技術の習得に励んでいます。システム全体を最適化できる設計能力を磨いてきました。</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-number">02</div>
+                    <h3>フルスタック実行力</h3>
+                    <p>フロントエンドからバックエンド、インフラまで一気通貫で対応。設計から構築まで一貫して担い、開発効率を最大化させます。</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-number">03</div>
+                    <h3>ブリッジSE能力</h3>
+                    <p>技術的理解力と調整能力を活かし、顧客と開発チーム、多国籍なチーム間のハブとなり、組織全体の成長を牽引します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-jp">職務経歴</span>
+                <span class="title-en">Work Experience</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="project-header">
+                            <span class="project-date">2022.12 - 2023.04</span>
+                            <h3 class="project-name">電力アプリ開発（エコれっくす）</h3>
+                        </div>
+                        <p class="project-role">フロントエンド / モバイルエンジニア</p>
+                        <p class="project-desc">Android/iOS 両OS向けのモバイルアプリ開発およびストア申請業務を担当。Figmaのデザインを忠実に再現し、操作性の高いUIを構築。
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <div class="project-team">
+                            <span>👥 6名体制</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="project-header">
+                            <span class="project-date">2021.12 - 2022.06</span>
+                            <h3 class="project-name">不動産管理・入居者向けアプリ（DLINE）</h3>
+                        </div>
+                        <p class="project-role">フルスタックエンジニア</p>
+                        <p class="project-desc">認証APIおよび情報取得APIの設計・実装から、フロントエンドへの組み込みまでを完結。AWS EC2へのデプロイ作業も実施。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">AWS EC2</span>
+                        </div>
+                        <div class="project-team">
+                            <span>👥 5名体制</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="project-header">
+                            <span class="project-date">2022.08 - 2022.10</span>
+                            <h3 class="project-name">キャスティングプラットフォーム（OpenCasting）</h3>
+                        </div>
+                        <p class="project-role">フロントエンド / モバイルエンジニア</p>
+                        <p class="project-desc">少人数のスピード感が求められる環境で、デザインからAPI連携、Firebaseへのデプロイまでを迅速に遂行。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Laravel</span>
+                        </div>
+                        <div class="project-team">
+                            <span>👥 2名体制</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="project-header">
+                            <span class="project-date">2021.08 - 2022.02</span>
+                            <h3 class="project-name">ECサイト開発（トレカキングダム）</h3>
+                        </div>
+                        <p class="project-role">フロントエンド / バックエンドエンジニア</p>
+                        <p class="project-desc">バックエンドAPIの開発および、Reactを用いたフロントエンドへのAPI埋め込みを担当。デザインの再現性と保守性の高いコード記述に注力。
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Laravel</span>
+                        </div>
+                        <div class="project-team">
+                            <span>👥 4名体制</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-jp">お問い合わせ</span>
+                <span class="title-en">Get In Touch</span>
+            </h2>
+            <div class="contact-content">
+                <p class="contact-intro">新しいプロジェクトや機会についてお気軽にご連絡ください。</p>
+                <div class="contact-links">
+                    <a href="mailto:fvn.manhtd@gmail.com" class="contact-link">
+                        <span class="contact-icon">✉️</span>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">fvn.manhtd@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/fvn-manhtd" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-icon">💻</span>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">github.com/fvn-manhtd</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Tran Duc Manh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/three-scene.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
