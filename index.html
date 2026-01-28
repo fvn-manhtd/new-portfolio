@@ -35,7 +35,7 @@
             <a href="#" class="nav-logo">TDM</a>
             <ul class="nav-menu">
                 <li><a href="#skills" class="nav-link">スキル</a></li>
-                <li><a href="#experience" class="nav-link">経験</a></li>
+                <li><a href="#projects" class="nav-link">プロジェクト</a></li>
                 <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
             </ul>
         </div>
@@ -61,7 +61,7 @@
                 </p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">お問い合わせ</a>
-                    <a href="#experience" class="btn btn-ghost">実績を見る</a>
+                    <a href="#projects" class="btn btn-ghost">実績を見る</a>
                 </div>
             </div>
         </div>
@@ -155,98 +155,185 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <!-- Featured Projects Section -->
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">
-                <span class="title-jp">職務経歴</span>
-                <span class="title-en">Work Experience</span>
+                <span class="title-jp">プロジェクト</span>
+                <span class="title-en">Featured Projects</span>
             </h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="project-header">
-                            <span class="project-date">2022.12 - 2023.04</span>
-                            <h3 class="project-name">電力アプリ開発（エコれっくす）</h3>
+            <div class="projects-slider">
+                <button class="slider-btn slider-prev" aria-label="Previous project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="slide">
+                            <div class="project-card">
+                                <div class="project-image-wrapper">
+                                    <img src="image/projects/oshirase-cms.png" alt="お知らせCMS" class="project-image"
+                                        onerror="this.src='image/projects/ecorex.png'">
+                                </div>
+                                <div class="project-card-header">
+                                    <span class="project-date">2025.12</span>
+                                    <h3 class="project-name">お知らせCMS</h3>
+                                </div>
+                                <p class="project-role">フルスタックエンジニア（フロントエンド、バックエンド、データベース設計、インフラ構築）</p>
+                                <p class="project-desc">
+                                    ニュース記事作成・管理用CMS（コンテンツ管理システム）の全工程を一人で完結。軽量・高速なHonoをバックエンドに採用し、パフォーマンスを意識したAPI設計を実施。Terraformを用いたIaC（Infrastructure
+                                    as Code）により、AWS上でのインフラ構築を自動化・コード管理化。</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Hono</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">Terraform</span>
+                                </div>
+                            </div>
                         </div>
-                        <p class="project-role">フロントエンド / モバイルエンジニア</p>
-                        <p class="project-desc">Android/iOS 両OS向けのモバイルアプリ開発およびストア申請業務を担当。Figmaのデザインを忠実に再現し、操作性の高いUIを構築。
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Figma</span>
+                        <div class="slide">
+                            <div class="project-card">
+                                <div class="project-image-wrapper">
+                                    <img src="image/projects/reshite.png" alt="Reshite" class="project-image">
+                                </div>
+                                <div class="project-card-header">
+                                    <span class="project-date">2025.11</span>
+                                    <h3 class="project-name">Reshite</h3>
+                                    <a href="https://reshite.app/" target="_blank" rel="noopener"
+                                        class="project-link">https://reshite.app/</a>
+                                </div>
+                                <p class="project-role">フルスタックエンジニア</p>
+                                <p class="project-desc">
+                                    レシートや請求書を撮影・アップロードし、AIが内容を解析・回答するSaaSアプリケーションを開発。Next.jsを活用したシームレスなユーザーインターフェースの実装。AI（LLM）との連携により、OCRだけでは難しい「請求内容に関する柔軟な質疑応答」機能を実現。
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">Supabase</span>
+                                    <span class="tech-tag">Vercel</span>
+                                    <span class="tech-tag">OpenAI API</span>
+                                    <span class="tech-tag">Anthropic API</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-team">
-                            <span>👥 6名体制</span>
+                        <div class="slide">
+                            <div class="project-card">
+                                <div class="project-image-wrapper">
+                                    <img src="image/projects/seikyuu-canvas.png" alt="Seikyuu Canvas"
+                                        class="project-image">
+                                </div>
+                                <div class="project-card-header">
+                                    <span class="project-date">2025.09</span>
+                                    <h3 class="project-name">Seikyuu Canvas</h3>
+                                    <a href="https://seikyuu-canvas-pro.vercel.app/" target="_blank" rel="noopener"
+                                        class="project-link">https://seikyuu-canvas-pro.vercel.app/</a>
+                                </div>
+                                <p class="project-role">フルスタックエンジニア（フロントエンド、バックエンド、データベース設計、インフラ構築）</p>
+                                <p class="project-desc">
+                                    請求書（Invoice）および顧客情報の管理を一元化するビジネス支援アプリを開発。データベース設計からUI実装まで担当し、直感的な操作感と正確なデータ管理を両立。Supabaseを活用することで、開発スピードを維持しつつスケーラブルなバックエンド環境を構築。
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">Supabase</span>
+                                    <span class="tech-tag">Vercel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="project-card">
+                                <div class="project-image-wrapper">
+                                    <img src="image/projects/ecorex.png" alt="電力アプリ開発" class="project-image">
+                                </div>
+                                <div class="project-card-header">
+                                    <span class="project-date">2022.12 - 2023.04</span>
+                                    <h3 class="project-name">電力アプリ開発（エコれっくす）</h3>
+                                </div>
+                                <p class="project-role">フロントエンド / モバイルエンジニア</p>
+                                <p class="project-desc">Android/iOS
+                                    両OS向けのモバイルアプリ開発およびストア申請業務を担当。Figmaのデザインを忠実に再現し、操作性の高いUIを構築。</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">React Native</span>
+                                    <span class="tech-tag">Figma</span>
+                                </div>
+                                <div class="project-team"><span>👥 6名体制</span></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="project-card">
+                                <div class="project-image-wrapper">
+                                    <img src="image/projects/opencasting.png" alt="OpenCasting" class="project-image">
+                                </div>
+                                <div class="project-card-header">
+                                    <span class="project-date">2022.08 - 2022.10</span>
+                                    <h3 class="project-name">キャスティングプラットフォーム（OpenCasting）</h3>
+                                </div>
+                                <p class="project-role">フロントエンド / モバイルエンジニア</p>
+                                <p class="project-desc">少人数のスピード感が求められる環境で、デザインからAPI連携、Firebaseへのデプロイまでを迅速に遂行。</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Laravel</span>
+                                </div>
+                                <div class="project-team"><span>👥 2名体制</span></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="project-card">
+                                <div class="project-image-wrapper">
+                                    <img src="image/projects/dline.png" alt="DLINE" class="project-image">
+                                </div>
+                                <div class="project-card-header">
+                                    <span class="project-date">2021.12 - 2022.06</span>
+                                    <h3 class="project-name">不動産管理・入居者向けアプリ（DLINE）</h3>
+                                </div>
+                                <p class="project-role">フルスタックエンジニア</p>
+                                <p class="project-desc">認証APIおよび情報取得APIの設計・実装から、フロントエンドへの組み込みまでを完結。AWS EC2へのデプロイ作業も実施。
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Kotlin</span>
+                                    <span class="tech-tag">Laravel</span>
+                                    <span class="tech-tag">AWS EC2</span>
+                                </div>
+                                <div class="project-team"><span>👥 5名体制</span></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="project-card">
+                                <div class="project-image-wrapper">
+                                    <img src="image/projects/tradingcard.png" alt="トレカキングダム" class="project-image">
+                                </div>
+                                <div class="project-card-header">
+                                    <span class="project-date">2021.08 - 2022.02</span>
+                                    <h3 class="project-name">ECサイト開発（トレカキングダム）</h3>
+                                </div>
+                                <p class="project-role">フロントエンド / バックエンドエンジニア</p>
+                                <p class="project-desc">
+                                    バックエンドAPIの開発および、Reactを用いたフロントエンドへのAPI埋め込みを担当。デザインの再現性と保守性の高いコード記述に注力。</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">React.js</span>
+                                    <span class="tech-tag">Laravel</span>
+                                </div>
+                                <div class="project-team"><span>👥 4名体制</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="project-header">
-                            <span class="project-date">2021.12 - 2022.06</span>
-                            <h3 class="project-name">不動産管理・入居者向けアプリ（DLINE）</h3>
-                        </div>
-                        <p class="project-role">フルスタックエンジニア</p>
-                        <p class="project-desc">認証APIおよび情報取得APIの設計・実装から、フロントエンドへの組み込みまでを完結。AWS EC2へのデプロイ作業も実施。</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">AWS EC2</span>
-                        </div>
-                        <div class="project-team">
-                            <span>👥 5名体制</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="project-header">
-                            <span class="project-date">2022.08 - 2022.10</span>
-                            <h3 class="project-name">キャスティングプラットフォーム（OpenCasting）</h3>
-                        </div>
-                        <p class="project-role">フロントエンド / モバイルエンジニア</p>
-                        <p class="project-desc">少人数のスピード感が求められる環境で、デザインからAPI連携、Firebaseへのデプロイまでを迅速に遂行。</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Laravel</span>
-                        </div>
-                        <div class="project-team">
-                            <span>👥 2名体制</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="project-header">
-                            <span class="project-date">2021.08 - 2022.02</span>
-                            <h3 class="project-name">ECサイト開発（トレカキングダム）</h3>
-                        </div>
-                        <p class="project-role">フロントエンド / バックエンドエンジニア</p>
-                        <p class="project-desc">バックエンドAPIの開発および、Reactを用いたフロントエンドへのAPI埋め込みを担当。デザインの再現性と保守性の高いコード記述に注力。
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">Laravel</span>
-                        </div>
-                        <div class="project-team">
-                            <span>👥 4名体制</span>
-                        </div>
-                    </div>
-                </div>
+                <button class="slider-btn slider-next" aria-label="Next project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
             </div>
+            <div class="slider-pagination"></div>
         </div>
     </section>
 
